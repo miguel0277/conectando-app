@@ -1,0 +1,169 @@
+
+> reserva-eventos@0.1.0 dev
+> next dev
+
+   ▲ Next.js 16.0.0 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.34:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 3.3s
+ ○ Compiling /eventos/[id] ...
+ GET /eventos/1 200 in 8.2s (compile: 7.6s, render: 610ms)
+Error: Route "/api/eventos/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at GET (app\api\eventos\[id]\route.ts:9:13)
+   7 | ) {
+   8 |   try {
+>  9 |     const { id } = params;
+     |             ^
+  10 |
+  11 |     const evento = await prisma.evento.findUnique({
+  12 |       where: { id },
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique()` invocation in
+d:\reserva-eventos-universidad\reserva-eventos\.next\dev\server\chunks\[root-of-the-server]__7c703f7e._.js:85:159
+
+  82 async function GET(_req, { params }) {
+  83     try {
+  84         const { id } = params;
+→ 85         const evento = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique({
+               where: {
+                 id: undefined,
+             ?   AND?: EventoWhereInput | EventoWhereInput[],
+             ?   OR?: EventoWhereInput[],
+             ?   NOT?: EventoWhereInput | EventoWhereInput[],
+             ?   titulo?: StringFilter | String,
+             ?   fecha?: StringFilter | String,
+             ?   lugar?: StringFilter | String,
+             ?   descripcionLarga?: StringFilter | String,
+             ?   imagenPrincipal?: StringFilter | String,
+             ?   responsable?: StringFilter | String,
+             ?   cupo?: StringFilter | String,
+             ?   imagenesSecundarias?: StringFilter | String,
+             ?   creadoPorId?: StringNullableFilter | String | Null,
+             ?   creador?: UsuarioNullableScalarRelationFilter | UsuarioWhereInput | Null,
+             ?   reservas?: ReservaListRelationFilter
+               }
+             })
+
+Argument `where` of type EventoWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+[GET /api/eventos/[id]] Error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique()` invocation in
+d:\reserva-eventos-universidad\reserva-eventos\.next\dev\server\chunks\[root-of-the-server]__7c703f7e._.js:85:159
+
+  82 async function GET(_req, { params }) {
+  83     try {
+  84         const { id } = params;
+→ 85         const evento = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique({
+               where: {
+                 id: undefined,
+             ?   AND?: EventoWhereInput | EventoWhereInput[],
+             ?   OR?: EventoWhereInput[],
+             ?   NOT?: EventoWhereInput | EventoWhereInput[],
+             ?   titulo?: StringFilter | String,
+             ?   fecha?: StringFilter | String,
+             ?   lugar?: StringFilter | String,
+             ?   descripcionLarga?: StringFilter | String,
+             ?   imagenPrincipal?: StringFilter | String,
+             ?   responsable?: StringFilter | String,
+             ?   cupo?: StringFilter | String,
+             ?   imagenesSecundarias?: StringFilter | String,
+             ?   creadoPorId?: StringNullableFilter | String | Null,
+             ?   creador?: UsuarioNullableScalarRelationFilter | UsuarioWhereInput | Null,
+             ?   reservas?: ReservaListRelationFilter
+               }
+             })
+
+Argument `where` of type EventoWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+    at <unknown> (app\api\eventos\[id]\route.ts:11:40)
+    at async GET (app\api\eventos\[id]\route.ts:11:20)
+   9 |     const { id } = params;
+  10 |
+> 11 |     const evento = await prisma.evento.findUnique({
+     |                                        ^
+  12 |       where: { id },
+  13 |     });
+  14 | {
+  clientVersion: '6.18.0'
+}
+ GET /api/eventos/1 500 in 3.1s (compile: 2.3s, render: 810ms)
+Error: Route "/api/eventos/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at GET (app\api\eventos\[id]\route.ts:9:13)
+   7 | ) {
+   8 |   try {
+>  9 |     const { id } = params;
+     |             ^
+  10 |
+  11 |     const evento = await prisma.evento.findUnique({
+  12 |       where: { id },
+prisma:error 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique()` invocation in
+d:\reserva-eventos-universidad\reserva-eventos\.next\dev\server\chunks\[root-of-the-server]__7c703f7e._.js:85:159
+
+  82 async function GET(_req, { params }) {
+  83     try {
+  84         const { id } = params;
+→ 85         const evento = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique({
+               where: {
+                 id: undefined,
+             ?   AND?: EventoWhereInput | EventoWhereInput[],
+             ?   OR?: EventoWhereInput[],
+             ?   NOT?: EventoWhereInput | EventoWhereInput[],
+             ?   titulo?: StringFilter | String,
+             ?   fecha?: StringFilter | String,
+             ?   lugar?: StringFilter | String,
+             ?   descripcionLarga?: StringFilter | String,
+             ?   imagenPrincipal?: StringFilter | String,
+             ?   responsable?: StringFilter | String,
+             ?   cupo?: StringFilter | String,
+             ?   imagenesSecundarias?: StringFilter | String,
+             ?   creadoPorId?: StringNullableFilter | String | Null,
+             ?   creador?: UsuarioNullableScalarRelationFilter | UsuarioWhereInput | Null,
+             ?   reservas?: ReservaListRelationFilter
+               }
+             })
+
+Argument `where` of type EventoWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+[GET /api/eventos/[id]] Error: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique()` invocation in
+d:\reserva-eventos-universidad\reserva-eventos\.next\dev\server\chunks\[root-of-the-server]__7c703f7e._.js:85:159
+
+  82 async function GET(_req, { params }) {
+  83     try {
+  84         const { id } = params;
+→ 85         const evento = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].evento.findUnique({
+               where: {
+                 id: undefined,
+             ?   AND?: EventoWhereInput | EventoWhereInput[],
+             ?   OR?: EventoWhereInput[],
+             ?   NOT?: EventoWhereInput | EventoWhereInput[],
+             ?   titulo?: StringFilter | String,
+             ?   fecha?: StringFilter | String,
+             ?   lugar?: StringFilter | String,
+             ?   descripcionLarga?: StringFilter | String,
+             ?   imagenPrincipal?: StringFilter | String,
+             ?   responsable?: StringFilter | String,
+             ?   cupo?: StringFilter | String,
+             ?   imagenesSecundarias?: StringFilter | String,
+             ?   creadoPorId?: StringNullableFilter | String | Null,
+             ?   creador?: UsuarioNullableScalarRelationFilter | UsuarioWhereInput | Null,
+             ?   reservas?: ReservaListRelationFilter
+               }
+             })
+
+Argument `where` of type EventoWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+    at <unknown> (app\api\eventos\[id]\route.ts:11:40)
+    at async GET (app\api\eventos\[id]\route.ts:11:20)
+   9 |     const { id } = params;
+  10 |
+> 11 |     const evento = await prisma.evento.findUnique({
+     |                                        ^
+  12 |       where: { id },
+  13 |     });
+  14 | {
+  clientVersion: '6.18.0'
+}
+ GET /api/eventos/1 500 in 401ms (compile: 28ms, render: 372ms)
+ GET /api/eventos/1 200 in 264ms (compile: 218ms, render: 46ms)
+^C

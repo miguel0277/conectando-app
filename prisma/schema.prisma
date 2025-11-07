@@ -1,0 +1,58 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+enum Rol {
+  ADMIN
+  USUARIO
+}
+
+// Tabla de eventos
+model Evento {
+  id                 String   @id
+  titulo             String
+  fecha              String
+  lugar              String
+  descripcionLarga   String
+  imagenPrincipal    String
+  responsable        String
+  cupo               String
+  imagenesSecundarias String
+  creadoPorId        String?
+  creador            Usuario? @relation("UsuarioEventos", fields: [creadoPorId], references: [id])
+
+  reservas           Reserva[]
+}
+
+// Tabla de reservas
+model Reserva {
+  idReserva  String   @id
+  nombre     String
+  correo     String
+  documento  String
+  timestamp  DateTime @default(now())
+  eventoId   String
+  usuarioId  String?
+  evento     Evento   @relation(fields: [eventoId], references: [id])
+  usuario    Usuario? @relation(fields: [usuarioId], references: [id])
+}
+
+model Usuario {
+  id             String   @id @default(uuid())
+  correo         String   @unique
+  usuario        String   @unique
+  hashedPassword String
+  rol            Rol
+  creadoEn       DateTime @default(now())
+  actualizadoEn  DateTime @updatedAt
+
+  eventos        Evento[] @relation("UsuarioEventos")
+  reservas       Reserva[]
+}
