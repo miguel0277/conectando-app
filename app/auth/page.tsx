@@ -1,17 +1,20 @@
 import AuthClient from "./auth-client";
 
 type AuthPageProps = {
-  searchParams?: {
+  searchParams: Promise<{
     mode?: string;
     redirect?: string;
-  };
+  }>;
 };
 
-export default function AuthPage({ searchParams }: AuthPageProps) {
-  const modeParam = searchParams?.mode === "register" ? "register" : "login";
+export default async function AuthPage({ searchParams }: AuthPageProps) {
+  const resolvedParams = await searchParams;
+
+  const modeParam =
+    resolvedParams?.mode === "register" ? "register" : "login";
   const redirectRaw =
-    typeof searchParams?.redirect === "string"
-      ? decodeURIComponent(searchParams.redirect)
+    typeof resolvedParams?.redirect === "string"
+      ? decodeURIComponent(resolvedParams.redirect)
       : "";
   const redirectSafe =
     redirectRaw.startsWith("/") && !redirectRaw.startsWith("//")
